@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "appweb-fce0f": {
+      "hosting": {
+        "AppWeb": [
+          "appweb-fce0f"
+        ]
+      }
+    }
+  }
+}
