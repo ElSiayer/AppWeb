@@ -5,22 +5,35 @@
                 <h3 class="card-title text-center">Registrarse</h3>
                 <form [formGroup]="formularioRegistro" (ngSubmit)="onRegister()">
                     <div class="form-group">
-                      <label for="InputCorreo">Correo Electrónico</label>
-                      <input type="email" class="form-control" email="true" id="InputCorreo" aria-describedby="emailHelp" placeholder="Ingresar Correo Electrónico" formControlName="email">
+                      <mat-form-field>                        
+                        <input type="email" class="form-control" email="true" id="InputCorreo" aria-describedby="emailHelp" matInput placeholder="Ingresar Correo Electrónico" formControlName="email">                    
+                      </mat-form-field>
+                      <mat-error *ngIf="campoValido('email')">
+                        {{getError('email')}}
+                      </mat-error>                 
                     </div>
                     <div class="form-group">
-                      <label for="InputPassword">Contraseña</label>
-                      <input type="password" class="form-control" id="InputPassword" placeholder="Ingresar Contraseña" formControlName="password">
+                      <mat-form-field class="form-group">
+                        <input type="password" class="form-control" matInput placeholder="Ingresar Contraseña" formControlName="password">
+                      </mat-form-field>
+                      <mat-error *ngIf="campoValido('password')">
+                        {{getError('password')}}
+                      </mat-error>
                     </div>
                     <div class="form-group">
-                      <label for="InputPassword2">Validar Contraseña</label>
-                      <input type="password" class="form-control" id="InputPassword2" placeholder="Ingresar Nuevamente la Contraseña" formControlName="password2">
+                      <mat-form-field>
+                        <input type="password" class="form-control" matInput placeholder="Ingresar Nuevamente la Contraseña" formControlName="password2">
+                      </mat-form-field>
+                      <mat-error *ngIf="campoValido('password2')">
+                        {{getError('password2')}}
+                      </mat-error>
                     </div>                 
                     <button type="submit" class="btn btn-primary btn-block mt-2">Ingresar</button>
                   </form>
                   <div class="form-group mt-3">
                     <p>¿Tienes una Cuenta Creada?<a [routerLink]="['/login']">LogIn</a></p>
-                  </div>                  
+                  </div> 
+                          
             </div>
         </div>
     </div>
