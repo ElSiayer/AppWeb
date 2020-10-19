@@ -5,6 +5,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { MaterialModule } from 'src/app/material.module';
+import { NavbarModule, WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
 
 
 @NgModule({
@@ -13,7 +14,11 @@ import { MaterialModule } from 'src/app/material.module';
     CommonModule,
     LoginRoutingModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    NavbarModule,
+    WavesModule,
+    ButtonsModule,
+    IconsModule
   ]
 })
 export class LoginModule { }

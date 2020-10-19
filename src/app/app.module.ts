@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarModule, WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
 
 //FireBase Modules
 
@@ -25,7 +26,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NavbarModule,
+    WavesModule,
+    ButtonsModule,
+    IconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

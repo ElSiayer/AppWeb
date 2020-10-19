@@ -33,10 +33,7 @@ export class RegisterComponent implements OnInit {
     }
     
   }
-  getError(field: string): string{
-    console.log(field)
-    //console.log(this.formularioRegistro.get('password').value)
-    //console.log(this.formularioRegistro.get(field).value===this.formularioRegistro.get('password').value)
+  getError(field: string): string{    
     let errorMenssage;
     const {email,password,password2}=this.formularioRegistro.value;
     if(this.formularioRegistro.get(field).errors?.required){
