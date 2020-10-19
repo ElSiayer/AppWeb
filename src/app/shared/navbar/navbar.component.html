@@ -10,6 +10,9 @@
         </li>
       </ul>
       <ul class="navbar-nav mx-0">
+        <li class="nav-item active" *ngIf="authServ.userData|async">
+          <a class="nav-link"  [routerLink]="['/post-photo']">Subir Imagen</a>
+        </li> 
         <li class="nav-item active">
           <a class="nav-link" href="#" *ngIf="authServ.userData|async; else showLogin"(click)="logOut()">LogOut</a>
         </li>

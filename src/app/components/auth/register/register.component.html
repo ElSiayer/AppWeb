@@ -6,7 +6,7 @@
                 <form [formGroup]="formularioRegistro" (ngSubmit)="onRegister()">
                     <div class="form-group">
                       <mat-form-field>                        
-                        <input type="email" class="form-control" email="true" id="InputCorreo" aria-describedby="emailHelp" matInput placeholder="Ingresar Correo Electrónico" formControlName="email">                    
+                        <input type="email" class="form-control" email="true" id="InputCorreo" aria-describedby="emailHelp" matInput placeholder="Ingresar Correo Electrónico" formControlName="email">
                       </mat-form-field>
                       <mat-error *ngIf="campoValido('email')">
                         {{getError('email')}}
