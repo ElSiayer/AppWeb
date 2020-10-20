@@ -10,18 +10,21 @@ import { finalize } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PostService {
+  public ArrayImg: String[]=new Array()
   public Pathimg: any;
   public imgURL:any;
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage) {}
-  public uploadPhoto(img,name){
+  public async uploadPhoto(img,name){
     this.Pathimg=`images/${name}`;
     const filePath = this.storage.ref(this.Pathimg);
     const uploadTask= this.storage.upload(this.Pathimg,img);
-    uploadTask.snapshotChanges().pipe(finalize(()=>{
+    const p = await uploadTask.snapshotChanges().pipe(finalize(()=>{
       filePath.getDownloadURL().subscribe(urlimg=>{
         this.imgURL= urlimg;
+        this.ArrayImg.push(urlimg)
         console.log(this.imgURL)
       })
-    })).subscribe();   
+    })).subscribe();
+    return (this.imgURL)
   }
 }

@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   public usuario: any
   async ngOnInit(){
     this.authServ.userData.subscribe(user =>{
-      if(user){console.log( user.email);
+      if(user){
         this.usuario=user.email;}
     })
   }

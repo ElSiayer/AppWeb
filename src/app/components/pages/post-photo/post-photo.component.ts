@@ -11,20 +11,26 @@ import { PostService } from "../../../shared/post.service"
 export class PostPhotoComponent implements OnInit {
   public most=false;
   private image:any
-  public imgMostrar;
+  public mostrarIMG:any;
+  public imgMostrar;  
   ImgEnviar= new FormGroup({
     name: new FormControl(''),
     img: new FormControl('')
   })
 
   constructor(public authServ: AuthService,private postServ: PostService) { }
-  upLoadImg(){
-    const{name, img}=this.ImgEnviar.value;
-    console.log(img)
+  async upLoadImg(){
+    if(this.most){
+      const{name, img}=this.ImgEnviar.value;
+      console.log(img)
+      console.log(this.postServ.imgURL)  
+      await this.postServ.uploadPhoto(this.image, name)    
+      this.imgMostrar=''
+      this.ImgEnviar.reset()
+      this.most=false
+      this.mostrarIMG=this.postServ.ArrayImg
+    }
     
-    //this.postServ.uploadPhoto(this.image,name)
-    
-    console.log(this.image)
   }
   handelImg(event:any):void{
     if (event.target.files && event.target.files[0]) {
@@ -34,8 +40,7 @@ export class PostPhotoComponent implements OnInit {
         this.imgMostrar= event.target.result;
        }
        this.most=true 
-       reader.readAsDataURL(event.target.files[0]);  }
-      
+       reader.readAsDataURL(event.target.files[0]);  }      
   }
 
   ngOnInit(): void { 
