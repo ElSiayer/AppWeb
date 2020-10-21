@@ -4,9 +4,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 
 
-const impMaterial=[MatListModule,MatFormFieldModule,MatInputModule,MatIconModule]
+const impMaterial=[MatListModule,MatFormFieldModule,MatInputModule,MatIconModule,MatSelectModule]
 @NgModule({
   declarations: [],
   imports: [

@@ -1,3 +1,38 @@
 .mat-form-field{
     width: 100%;
 }
+.ng-untouched{
+  text-align: center;
+}
+.checkeable input {
+    display: none;
+  }
+  .checkeable input {
+    display: none;
+  }
+  .checkeable input:checked  + .card {
+    border-color:#007bff !important;
+  }
+  .card {
+      max-width: 100%;
+      max-height: 300px !important;
+  }
+  .checkeable img{
+    max-width: 100%;
+    max-height: 250px;
+  }
+.checkeable .card-body {
+    padding: 10px !important;
+    max-height: 100%;
+}
+.checkeable button {
+    background: none;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 0;
+    color: white;
+    margin-right: 12px;
+    padding: 0;
+    text-shadow: 1px 1px black;
+}

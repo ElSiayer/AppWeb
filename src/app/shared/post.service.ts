@@ -20,7 +20,7 @@ export class PostService {
     const uploadTask= this.storage.upload(this.Pathimg,img);
     const p = await uploadTask.snapshotChanges().pipe(finalize(()=>{
       filePath.getDownloadURL().subscribe(urlimg=>{
-        this.imgURL= urlimg;
+        this.imgURL= urlimg;        
         this.ArrayImg.push(urlimg)
         console.log(this.imgURL)
       })
